@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>主页</title>
+		<link rel="stylesheet" type="text/css" href="../lib/css/page.css" />
+		<link rel="stylesheet" type="text/css" href="../lib/css/iconfont.css" />
+		<script src="../lib/js/vue.js"></script>
+		<script src="../lib/js/jquery-3.5.0.min.js"></script>
+	</head>
+	<body class="index-body">
+		<section class="index" id="index">
+			<!--左侧菜单-->
+			<section class="index-leftMenu">
+				<div class="index-leftMenu-title">
+					<span class="iconfont index-leftMenu-icon-1" v-on:click="HideLeftMenu">&#xe658;</span>
+					<span class="index-leftMenu-icon-2">个人框架</span>
+					<span class="menu-x index-leftMenu-icon-3" v-on:click="clickXIcon()">
+						<i class="menu-i-1"></i>
+						<i class="menu-i-2"></i>
+					</span>
+				</div>
+				<div class="index-leftMenu-Menu">
+					<ul class="index-leftMenu-Menu-ul" v-for="(m,index) in menus">
+						<li class="index-leftMenu-Menu-1" v-on:click="leftMenuHover(index)">
+							<span>{{m.name}}</span>
+							<span v-bind:class="leftMenuIconClass+index" class="list-Arrow"></span>
+
+
+						</li>
+						<li>
+							<ul v-bind:class="'index-leftMenu-Menu'+index" class="index-leftMenu-Menu-2">
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+							</ul>
+						</li>
+					</ul>
+
+
+				</div>
+
+			</section>
+			<!--右侧内容部分-->
+			<section class="index-rightBody">
+				<header class="index-rightBody-header">123</header>
+				<div class="index-rightBody-body">
+					123---------------------------------------------
+				</div>
+			</section>
+		</section>
+	</body>
+</html>
+<script>
+	$(".index-leftMenu-Menu-2").hide();
+
+	var vm = new Vue({
+		el: "#index",
+		data: {
+			//控制左侧菜单显示隐藏
+			showMenubl: false,
+			//控制左侧菜单明细的显示隐藏
+			showMenuInfobl: false,
+			//这个变量是控制左上角点一下变成X的图标的和手机版的左侧菜单样式  
+			phoneMenuDisplay: false,
+			leftMenuIconClass: "list-Arrow",
+			menus: [{
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}, {
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}, {
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}, {
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}, {
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}, {
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}, {
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}, {
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}, {
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}, {
+				name: "系统设置",
+				href: "#",
+				id: "1"
+
+			}]
+
+		},
+		methods: {
+
+			//左侧菜单显示隐藏
+			showMenuInfo: function(index) {
+				$(".index-leftMenu-Menu-2").hide();
+				if (this.showMenuInfobl) {
+					$(".index-leftMenu-Menu" + index).hide();
+				} else {
+					$(".index-leftMenu-Menu" + index).show();
+				}
+			},
+
+			//左侧菜单的显示和隐藏还有左上角那个会变为X的图标
+			clickXIcon: function() {
+				this.phoneMenuDisplay = !this.phoneMenuDisplay;
+
+				if (!this.phoneMenuDisplay) {
+					$(".menu-i-1").css("transform", "rotateZ(0deg)");
+					$(".menu-i-1").css("margin-top", "0.5em");
+					$(".menu-i-1").css("margin-bottom", "0.15em");
+					$(".menu-i-2").css("margin-top", "0.15em");
+					$(".menu-i-2").css("margin-bottom", "0em");
+					$(".menu-i-2").css("transform", "rotateZ(0deg)");
+
+				} else {
+					//变成X了   隐藏大菜单
+					$(".menu-i-1").css("margin-top", "0.5em");
+					$(".menu-i-2").css("margin-top", "0em");
+					$(".menu-i-2").css("margin-bottom", "0em");
+					$(".menu-i-1").css("margin-bottom", "0em");
+
+
+					$(".menu-i-1").css("transform", "rotateZ(-45deg)");
+
+					$(".menu-i-2").css("transform", "rotateZ(45deg)");
+
+
+				}
+
+
+			},
+			HideLeftMenu: function() {
+				if (this.showMenubl) {
+
+					$(".index-leftMenu-Menu").show();
+
+
+					$(".index-leftMenu").css("flex-grow", "1");
+					$(".index-leftMenu-icon-2").show();
+					$(".index-leftMenu-icon-3").show();
+
+				} else {
+					$(".index-leftMenu-Menu").hide();
+
+
+
+					$(".index-leftMenu").css("position", "static");
+
+
+
+
+				}
+				this.showMenubl = !this.showMenubl;
+
+			},
+			//左侧菜单鼠标悬浮上去后进行的操作
+			leftMenuHover: function(index) {
+				this.showMenuInfo(index);
+
+				$(".list-Arrow").css("top", "0.85em");
+				$(".list-Arrow").css("transform", "rotate(0deg)");
+
+				$(".list-Arrow" + index).css("top", "0.85em");
+				$(".list-Arrow" + index).css("transform", "rotate(-90deg)");
+
+			}
+
+		}
+
+
+	});
+</script>

@@ -1,0 +1,541 @@
+.login-section {}
+
+.login-body {
+	background-image: url('../img/loginbackageimg.jpg');
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-inputbackage {
+	color: #FFF;
+	background-color: rgba(255, 255, 255, 0.5);
+
+	display: flex;
+	flex-direction: column;
+	width: 25em;
+	margin: 2em;
+	align-items: center;
+	position: relative;
+	top: 14em;
+
+}
+
+@media screen and (max-width:500px) {
+
+	.login-body {
+		background-image: url('../img/phone-loginimg2.jpg');
+		background-repeat: no-repeat;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-size: 500px;
+	}
+
+
+	.login-inputbackage {
+		color: #FFF;
+		background-color: rgba(255, 255, 255, 0.5);
+
+		display: flex;
+		flex-direction: column;
+		width: 18em;
+		margin: 2em;
+		align-items: center;
+		position: relative;
+		top: 8em;
+
+	}
+}
+
+
+.login-inputbackage-label {
+
+	display: inline-block;
+	width: 4em;
+
+}
+
+/*---------index页面------------*/
+
+.index-body {
+	background-image: url('../img/loginbackageimg.jpg');
+	padding: 0;
+	margin: 0;
+
+}
+
+.index {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	display: flex;
+
+}
+
+.index-leftMenu {
+
+
+	flex-grow: 1;
+
+
+}
+
+.index-rightBody {
+
+	flex-grow: 9;
+}
+
+.index-leftMenu-title {
+
+	background-color: rgba(255, 255, 255, 0.9);
+	text-align: center;
+	padding: 1em;
+	font-family: "Source Han Sans CN";
+	font-weight: 900;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+
+.index-leftMenu-Menu {
+
+	padding: 0;
+	margin: 0;
+	background-color: rgba(255, 255, 255, 0.4);
+	height: 100%;
+	overflow-y: auto;
+	border-right:5px #000 solid;
+
+}
+
+.index-leftMenu-Menu-ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+}
+
+.index-leftMenu-Menu-1 {
+
+	line-height: 2.5em;
+	border-bottom: 1px #000000 solid;
+	padding-left: 2em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+
+.index-leftMenu-Menu-1:hover {
+	background-color: rgba(176, 223, 230, 0.5);
+
+}
+
+.index-leftMenu-Menu-2 {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.index-leftMenu-Menu-2 li {
+	display: inline-block;
+	border: 1px #000000 solid;
+	border: 1px #000000 solid;
+	border: 1px #000000 solid;
+	border-top: 0;
+
+	background-color: antiquewhite;
+	opacity: 0.7;
+	line-height: 2em;
+
+	padding-left: 3em;
+
+}
+
+.index-leftMenu-Menu-2 li:hover {
+
+	opacity: 0.9;
+
+}
+
+
+.list-Arrow {
+	position: relative;
+	top: 0.85em;
+	right: 0.5em;
+	height: 0;
+
+	display: inline-block;
+
+	border-left: 0.5em rgba(255, 255, 255, 0) solid;
+	border-right: 0.5em #000 solid;
+	border-top: 0.5em rgba(255, 255, 255, 0) solid;
+	border-bottom: 0.5em rgba(255, 255, 255, 0) solid;
+	transition: all 0.5s ease;
+}
+
+
+.index-rightBody-header {
+	background-color: rgba(255, 255, 255, 0.9);
+	text-align: center;
+	padding: 1em;
+	font-family: "Source Han Sans CN";
+	font-weight: 900;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: rgba(255, 255, 255, 0);
+
+}
+
+
+
+.index-rightBody-body {
+
+	width: 100%;
+	height: 100%;
+	 
+}
+
+
+.index-leftMenu-icon-1{
+	order: 3;
+	
+}
+
+.index-leftMenu-icon-2{
+	order: 2;
+	
+}
+
+.index-leftMenu-icon-3{
+	order: 1;
+	
+}
+
+
+/*-----------滚动条 --------------------*/
+
+.index-leftMenu-Menu::-webkit-scrollbar {
+	width: 3px;
+
+}
+
+.index-leftMenu-Menu::-webkit-scrollbar-track {
+	background: rgb(239, 239, 239);
+	border-radius: 0px;
+}
+
+.index-leftMenu-Menu::-webkit-scrollbar-thumb {
+	background: #bfbfbf;
+	border-radius: 0px;
+}
+
+.index-leftMenu-Menu::-webkit-scrollbar-thumb:hover {
+	background: #333;
+}
+
+.index-leftMenu-Menu::-webkit-scrollbar-corner {
+	background: #179a16;
+}
+
+/*-----------end 滚动条 --------------------*/
+
+/*--首页会交叉的图标上横线--*/
+.menu-i-1 {
+	transform-origin: 56% 44%;
+	margin-top: 0.5em;
+	margin-bottom: 0.15em;
+	display: inline-block;
+	width: 1em;
+	border-top: 0.1em #000000 solid;
+	transition: all 0.5s ease;
+	padding: 0;
+
+}
+
+.menu-i-2 {
+	transform-origin: 56% 44%;
+	margin-top: 0.15em;
+	display: inline-block;
+	width: 1em;
+	border-top: 0.1em #000000 solid;
+
+	transition: all 0.5s ease;
+	padding: 0;
+
+}
+
+.menu-x {
+	display: inline-block;
+	height: 1em;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+
+}
+
+
+/*-- end 首页会交叉的图标上横线--*/
+
+
+
+/*--------------input  \/----------------*/
+
+
+
+.login-inputtext {
+	line-height: 2em;
+	width: 24.5em;
+	transition: all 0.5s ease;
+}
+
+@media screen and (max-width:500px) {
+	.login-inputtext {
+		line-height: 2em;
+		width: 15em;
+	}
+}
+
+/*--------------end input  \/----------------*/
+
+
+
+/*--------------button  \/----------------*/
+.login-inputbackage-go {
+
+	font-family: "eras demi itc";
+
+	width: 30em;
+
+	line-height: 2.5em;
+
+	background-color: cornflowerblue;
+
+	border: 1px #FFF solid;
+
+	font-weight: 800;
+
+	color: aliceblue;
+
+	transition: all 0.5s ease;
+
+}
+
+
+.login-inputbackage-signin {
+
+	font-family: "microsoft yahei";
+
+	width: 30em;
+
+	line-height: 2.5em;
+
+	background-color: lightseagreen;
+
+	border: 1px #FFF solid;
+
+	font-weight: 800;
+
+	color: aliceblue;
+
+	transition: all 0.5s ease;
+
+
+}
+
+@media screen and (max-width:500px) {
+	.login-inputbackage-go {
+
+		font-family: "eras demi itc";
+
+		width: 20.5em;
+
+		line-height: 2.5em;
+
+		background-color: cornflowerblue;
+
+		border: 1px #FFF solid;
+
+		font-weight: 800;
+
+		color: aliceblue;
+
+	}
+
+
+	.login-inputbackage-signin {
+
+		font-family: "microsoft yahei";
+
+		width: 20.5em;
+
+		line-height: 2.5em;
+
+		background-color: lightseagreen;
+
+		border: 1px #FFF solid;
+
+		font-weight: 800;
+
+		color: aliceblue;
+
+		transition: all 0.5s ease;
+
+
+	}
+}
+
+
+/*---- button 动画效果  ---*/
+
+.button-hover-up:hover {
+	position: relative;
+	top: -0.1em;
+	box-shadow: #6495ED 0px 0px 3px 1.5px;
+
+}
+
+
+
+/*----end button 动画效果  ---*/
+
+
+/*-------------- end button  \/----------------*/
+
+/*--------------内外边距  \/----------------*/
+
+.top-margin-01 {
+	margin-top: 0.1em;
+
+}
+
+.top-margin-03 {
+	margin-top: 0.3em;
+
+}
+
+
+.top-margin-05 {
+	margin-top: 0.5em;
+
+}
+
+
+.top-margin-07 {
+	margin-top: 0.7em;
+
+}
+
+
+.top-margin-09 {
+	margin-top: 0.9em;
+
+}
+
+.top-margin-11 {
+	margin-top: 1.1em;
+
+}
+
+.top-margin-13 {
+	margin-top: 1.3em;
+
+}
+
+.top-margin-15 {
+	margin-top: 1.5em;
+
+}
+
+.top-margin-17 {
+	margin-top: 1.7em;
+
+}
+
+
+
+.margin-01 {
+	margin: 0.1em;
+
+}
+
+.margin-03 {
+	margin: 0.3em;
+
+}
+
+.margin-05 {
+	margin: 0.5em;
+
+}
+
+.margin-07 {
+	margin: 0.7em;
+
+}
+
+.margin-09 {
+	margin: 0.9em;
+
+}
+
+.padding-01 {
+
+	padding: 0.1em;
+}
+
+.padding-03 {
+
+	padding: 0.3em;
+}
+
+.padding-05 {
+
+	padding: 0.5em;
+}
+
+.padding-07 {
+
+	padding: 0.7em;
+}
+
+.padding-09 {
+
+	padding: 0.9em;
+}
+
+.padding-12 {
+
+	padding: 1.2em;
+}
+
+.padding-15 {
+
+	padding: 1.2em;
+}
+
+.padding-18 {
+
+	padding: 1.2em;
+}
+
+
+.padding-21 {
+
+	padding: 1.2em;
+}
+
+
+.padding-24 {
+
+	padding: 1.2em;
+}
+
+
+/*--------------end 内外边距  \/----------------*/

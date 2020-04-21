@@ -86,8 +86,8 @@
 
 .index-leftMenu {
 
+	width: 20em;
 
-	flex-grow: 1;
 	transition: all 2s ease;
 
 
@@ -162,11 +162,9 @@
 	border: 1px #000000 solid;
 	border: 1px #000000 solid;
 	border-top: 0;
-
 	background-color: antiquewhite;
 	opacity: 0.7;
 	line-height: 2em;
-
 	padding-left: 3em;
 
 }
@@ -217,9 +215,10 @@
 	display: flex;
 	flex-direction: row;
 }
-.index-rightBody-header-out img{
+
+.index-rightBody-header-out img {
 	width: 3em;
-	
+
 }
 
 .index-rightBody-header-out-sel {
@@ -228,21 +227,12 @@
 	font-family: '方正兰亭细黑';
 	font-size: 1em;
 	padding: 0.3em;
- margin-right:1em ;
+	margin-right: 1em;
 }
 
-
-.index-leftMenu-icon-3 {
- 
-
-}
 
 
 /*-------------- end 首页右侧header部分----------------*/
-
-
-
-
 
 .index-rightBody-body {
 
@@ -251,11 +241,6 @@
 
 
 }
-
-
-
-
-
 
 /*------------右侧内容头部的页面索引--------------*/
 
@@ -284,7 +269,7 @@
 
 }
 
-.index-rightBody-body-pages-1 {
+.index-rightBody-body-pages-all {
 
 	height: 100%;
 	width: 100%;

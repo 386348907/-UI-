@@ -26,9 +26,7 @@
 						</li>
 						<li>
 							<ul v-bind:class="'index-leftMenu-Menu'+index" class="index-leftMenu-Menu-2">
-								<li>1</li>
-								<li>2</li>
-								<li>3</li>
+								<li v-for="v in m.level2Menu" v-on:click="AddopenPages(v.name,v.pageid)">{{v.name}}</li>
 							</ul>
 						</li>
 					</ul>
@@ -44,31 +42,34 @@
 						<i class="menu-i-2"></i>
 					</span>
 					<div class="index-rightBody-header-out">
-						<img src="../lib/img/loginbackageimg.jpg" >
+						<img src="../lib/img/loginbackageimg.jpg">
 						<select class="index-rightBody-header-out-sel">
 							<option>系统管理员</option>
 							<option>系统配置</option>
 							<option>用户信息</option>
 							<option>退出登录</option>
 						</select>
-					 
-						</div>
+
+					</div>
 				</header>
 				<div class="index-rightBody-body">
 
 					<!--右侧内容部分-->
 					<div class="index-rightBody-body-pageIndex">
 
-						<span class="index-rightBody-body-pageIndex-span">首页&nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont">&#xe65f;</i></span>
-
-						<span class="index-rightBody-body-pageIndex-span">系统设置&nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont">&#xe65f;</i></span>
+						<span class="index-rightBody-body-pageIndex-span" v-for="p in openPages" v-on:click="Tabpages(p.pageid)">{{p.name}}&nbsp;&nbsp;&nbsp;&nbsp;<i
+							 class="iconfont">&#xe65f;</i></span>
 
 					</div>
 
 					<div class="index-rightBody-body-pages">
 
-						<div class="index-rightBody-body-pages-1">
-							123123123111111111111111111111111111111111111111231231231111111111111111111111111111111111
+						<div class="index-rightBody-body-pages-1 index-rightBody-body-pages-all">
+							11111111111111111111111111111111111111111111111111111
+
+						</div>
+						<div class="index-rightBody-body-pages-2 index-rightBody-body-pages-all">
+							2222222222222222222222222222222222222222222222222222222
 
 						</div>
 
@@ -85,68 +86,65 @@
 	var vm = new Vue({
 		el: "#index",
 		data: {
-			//控制左侧菜单显示隐藏
-			showMenubl: false,
-			//控制左侧菜单明细的显示隐藏
-			showMenuInfobl: false,
+
 			//这个变量是控制左上角点一下变成X的图标的和手机版的左侧菜单样式  
 			phoneMenuDisplay: true,
+			//
+			showMenuInfobl: false,
 			leftMenuIconClass: "list-Arrow",
+			//右上打开页面的索引列表
+			openPages: [{
+				name: "用户管理",
+				pageid: "1"
+			}, {
+				name: "权限管理",
+				pageid: "2"
+			}],
+			//左侧菜单列表
 			menus: [{
 				name: "系统设置",
 				href: "#",
-				id: "1"
+				id: "1",
+				level2Menu: [{
+						name: "用户管理",
+						href: "#",
+						id: 10
+					},
+					{
+						name: "权限管理",
+						href: "#",
+						id: 10
+					},
 
+				],
 			}, {
 				name: "系统设置",
 				href: "#",
-				id: "1"
+				id: "1",
+				level2Menu: [{
+						name: "用户管理",
+						href: "#",
+						id: 10
+					},
+					{
+						name: "权限管理",
+						href: "#",
+						id: 10
+					},
 
-			}, {
-				name: "系统设置",
-				href: "#",
-				id: "1"
-
-			}, {
-				name: "系统设置",
-				href: "#",
-				id: "1"
-
-			}, {
-				name: "系统设置",
-				href: "#",
-				id: "1"
-
-			}, {
-				name: "系统设置",
-				href: "#",
-				id: "1"
-
-			}, {
-				name: "系统设置",
-				href: "#",
-				id: "1"
-
-			}, {
-				name: "系统设置",
-				href: "#",
-				id: "1"
-
-			}, {
-				name: "系统设置",
-				href: "#",
-				id: "1"
-
-			}, {
-				name: "系统设置",
-				href: "#",
-				id: "1"
-
+				],
 			}]
 
 		},
 		methods: {
 
+			//添加打开的页面
+			AddopenPages: function(name, pageid) {
+				this.openPages.push({
+					name: name,
+					pageid: pageid
+				})
+			},
 			//左侧菜单显示隐藏
 			showMenuInfo: function(index) {
 				$(".index-leftMenu-Menu-2").hide();
@@ -185,37 +183,29 @@
 
 					$(".index-leftMenu").show();
 
-
-
-
 				}
 
 
 			},
-			HideLeftMenu: function() {
-				if (this.showMenubl) {
 
-
-				} else {
-
-
-
-
-				}
-				this.showMenubl = !this.showMenubl;
-
-			},
 			//左侧菜单鼠标悬浮上去后进行的操作
 			leftMenuHover: function(index) {
 				this.showMenuInfo(index);
 
 				$(".list-Arrow").css("top", "0.85em");
 				$(".list-Arrow").css("transform", "rotate(0deg)");
-
 				$(".list-Arrow" + index).css("top", "0.85em");
 				$(".list-Arrow" + index).css("transform", "rotate(-90deg)");
 
+			},
+			Tabpages: function(tabid) {
+				$(".index-rightBody-body-pages-all").hide();
+				$(".index-rightBody-body-pages-" + tabid).show();
 			}
+
+
+
+
 
 		}
 

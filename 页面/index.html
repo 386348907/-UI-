@@ -13,19 +13,15 @@
 			<!--左侧菜单-->
 			<section class="index-leftMenu">
 				<div class="index-leftMenu-title">
-					<span class="iconfont index-leftMenu-icon-1" v-on:click="HideLeftMenu">&#xe658;</span>
-					<span class="index-leftMenu-icon-2">个人框架</span>
-					<span class="menu-x index-leftMenu-icon-3" v-on:click="clickXIcon()">
-						<i class="menu-i-1"></i>
-						<i class="menu-i-2"></i>
-					</span>
+
+					<span class="index-leftMenu-icon-2">个人框架 </span>
+
 				</div>
 				<div class="index-leftMenu-Menu">
 					<ul class="index-leftMenu-Menu-ul" v-for="(m,index) in menus">
 						<li class="index-leftMenu-Menu-1" v-on:click="leftMenuHover(index)">
 							<span>{{m.name}}</span>
 							<span v-bind:class="leftMenuIconClass+index" class="list-Arrow"></span>
-
 
 						</li>
 						<li>
@@ -43,9 +39,41 @@
 			</section>
 			<!--右侧内容部分-->
 			<section class="index-rightBody">
-				<header class="index-rightBody-header">123</header>
+				<header class="index-rightBody-header"><span class="menu-x index-leftMenu-icon-3" v-on:click="clickXIcon()">
+						<i class="menu-i-1"></i>
+						<i class="menu-i-2"></i>
+					</span>
+					<div class="index-rightBody-header-out">
+						<img src="../lib/img/loginbackageimg.jpg" >
+						<select class="index-rightBody-header-out-sel">
+							<option>系统管理员</option>
+							<option>系统配置</option>
+							<option>用户信息</option>
+							<option>退出登录</option>
+						</select>
+					 
+						</div>
+				</header>
 				<div class="index-rightBody-body">
-					123---------------------------------------------
+
+					<!--右侧内容部分-->
+					<div class="index-rightBody-body-pageIndex">
+
+						<span class="index-rightBody-body-pageIndex-span">首页&nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont">&#xe65f;</i></span>
+
+						<span class="index-rightBody-body-pageIndex-span">系统设置&nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont">&#xe65f;</i></span>
+
+					</div>
+
+					<div class="index-rightBody-body-pages">
+
+						<div class="index-rightBody-body-pages-1">
+							123123123111111111111111111111111111111111111111231231231111111111111111111111111111111111
+
+						</div>
+
+					</div>
+
 				</div>
 			</section>
 		</section>
@@ -62,7 +90,7 @@
 			//控制左侧菜单明细的显示隐藏
 			showMenuInfobl: false,
 			//这个变量是控制左上角点一下变成X的图标的和手机版的左侧菜单样式  
-			phoneMenuDisplay: false,
+			phoneMenuDisplay: true,
 			leftMenuIconClass: "list-Arrow",
 			menus: [{
 				name: "系统设置",
@@ -141,6 +169,9 @@
 					$(".menu-i-2").css("margin-bottom", "0em");
 					$(".menu-i-2").css("transform", "rotateZ(0deg)");
 
+					$(".index-leftMenu").hide();
+					$(".index-leftMenu").css("position", "static");
+
 				} else {
 					//变成X了   隐藏大菜单
 					$(".menu-i-1").css("margin-top", "0.5em");
@@ -148,10 +179,13 @@
 					$(".menu-i-2").css("margin-bottom", "0em");
 					$(".menu-i-1").css("margin-bottom", "0em");
 
-
 					$(".menu-i-1").css("transform", "rotateZ(-45deg)");
 
 					$(".menu-i-2").css("transform", "rotateZ(45deg)");
+
+					$(".index-leftMenu").show();
+
+
 
 
 				}
@@ -161,19 +195,8 @@
 			HideLeftMenu: function() {
 				if (this.showMenubl) {
 
-					$(".index-leftMenu-Menu").show();
-
-
-					$(".index-leftMenu").css("flex-grow", "1");
-					$(".index-leftMenu-icon-2").show();
-					$(".index-leftMenu-icon-3").show();
 
 				} else {
-					$(".index-leftMenu-Menu").hide();
-
-
-
-					$(".index-leftMenu").css("position", "static");
 
 
 

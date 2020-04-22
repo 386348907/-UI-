@@ -26,7 +26,7 @@
 						</li>
 						<li>
 							<ul v-bind:class="'index-leftMenu-Menu'+index" class="index-leftMenu-Menu-2">
-								<li v-for="v in m.level2Menu" v-on:click="AddopenPages(v.name,v.pageid)">{{v.name}}</li>
+								<li v-for="v in m.level2Menu" v-on:click="AddopenPages(v.name,v.id,v.href)">{{v.name}}</li>
 							</ul>
 						</li>
 					</ul>
@@ -35,6 +35,7 @@
 				</div>
 
 			</section>
+
 			<!--右侧内容部分-->
 			<section class="index-rightBody">
 				<header class="index-rightBody-header"><span class="menu-x index-leftMenu-icon-3" v-on:click="clickXIcon()">
@@ -43,11 +44,16 @@
 					</span>
 					<div class="index-rightBody-header-out">
 						<img src="../lib/img/loginbackageimg.jpg">
+						<ul class="index-rightBody-header-out-ul">
+							<li class="index-rightBody-header-out-ul-li-1">系统管理员</li>
+							<li class="index-rightBody-header-out-ul-li-2">系统配置</li>
+							<li class="index-rightBody-header-out-ul-li-3">用户信息</li>
+						</ul>
 						<select class="index-rightBody-header-out-sel">
 							<option>系统管理员</option>
 							<option>系统配置</option>
 							<option>用户信息</option>
-							<option>退出登录</option>
+							<option class="index-rightBody-header-out-outButton">退出登录</option>
 						</select>
 
 					</div>
@@ -57,21 +63,18 @@
 					<!--右侧内容部分-->
 					<div class="index-rightBody-body-pageIndex">
 
-						<span class="index-rightBody-body-pageIndex-span" v-for="p in openPages" v-on:click="Tabpages(p.pageid)">{{p.name}}&nbsp;&nbsp;&nbsp;&nbsp;<i
-							 class="iconfont">&#xe65f;</i></span>
+						<span class="index-rightBody-body-pageIndex-span" v-for="(p,index) in openPages" v-on:click="Tabpages(p.pageid)"
+						 v-on:dblclick="DelOpenPages(index)">{{p.name}}&nbsp;&nbsp;&nbsp;&nbsp;<i v-on:click="DelOpenPages(index)" class="iconfont openPageClose">&#xe65f;</i></span>
 
 					</div>
 
 					<div class="index-rightBody-body-pages">
 
-						<div class="index-rightBody-body-pages-1 index-rightBody-body-pages-all">
-							11111111111111111111111111111111111111111111111111111
+						<div class="index-rightBody-body-pages-all" v-bind:class="'index-rightBody-body-pages-'+o.pageid" v-for="o in openPages">
 
+							<iframe v-bind:src="o.href" class="index-rightBody-body-pages-ifarme" frameborder="0" scrolling="off" id="external-frame"></iframe>
 						</div>
-						<div class="index-rightBody-body-pages-2 index-rightBody-body-pages-all">
-							2222222222222222222222222222222222222222222222222222222
 
-						</div>
 
 					</div>
 
@@ -91,15 +94,10 @@
 			phoneMenuDisplay: true,
 			//
 			showMenuInfobl: false,
+
 			leftMenuIconClass: "list-Arrow",
 			//右上打开页面的索引列表
-			openPages: [{
-				name: "用户管理",
-				pageid: "1"
-			}, {
-				name: "权限管理",
-				pageid: "2"
-			}],
+			openPages: [],
 			//左侧菜单列表
 			menus: [{
 				name: "系统设置",
@@ -107,29 +105,13 @@
 				id: "1",
 				level2Menu: [{
 						name: "用户管理",
-						href: "#",
-						id: 10
+						href: "main.html",
+						id: 1
 					},
 					{
 						name: "权限管理",
-						href: "#",
-						id: 10
-					},
-
-				],
-			}, {
-				name: "系统设置",
-				href: "#",
-				id: "1",
-				level2Menu: [{
-						name: "用户管理",
-						href: "#",
-						id: 10
-					},
-					{
-						name: "权限管理",
-						href: "#",
-						id: 10
+						href: "login.html",
+						id: 2
 					},
 
 				],
@@ -139,11 +121,36 @@
 		methods: {
 
 			//添加打开的页面
-			AddopenPages: function(name, pageid) {
-				this.openPages.push({
-					name: name,
-					pageid: pageid
-				})
+			AddopenPages: function(name, pageid, url) {
+				$(".index-rightBody-body-pages-all").hide();
+				var cuiZai = 0;
+				for (var i = 0; i < this.openPages.length; i++) {
+
+					if (this.openPages[i].pageid == pageid) {
+						cuiZai++;
+
+					}
+
+				}
+				if (cuiZai == 0) {
+
+					this.openPages.push({
+						name: name,
+						pageid: pageid,
+						href: url
+					})
+				} else {
+					this.Tabpages(pageid);
+
+				}
+
+
+				$(".index-rightBody-body-pages-" + pageid).show();
+			},
+			DelOpenPages: function(index) {
+
+				this.openPages.splice(index, 1);
+
 			},
 			//左侧菜单显示隐藏
 			showMenuInfo: function(index) {
@@ -199,13 +206,10 @@
 
 			},
 			Tabpages: function(tabid) {
+
 				$(".index-rightBody-body-pages-all").hide();
 				$(".index-rightBody-body-pages-" + tabid).show();
 			}
-
-
-
-
 
 		}
 

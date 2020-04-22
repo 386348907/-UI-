@@ -230,6 +230,46 @@
 	margin-right: 1em;
 }
 
+.index-rightBody-header-out-sel option{
+	 border: 1px #000000 solid;
+}
+
+
+.openPageClose:hover {
+
+	text-shadow: #000000 0 0px 1px;
+	transition: all 0.5s ease;
+	cursor: pointer;
+}
+
+.index-rightBody-header-out-outButton{
+		 
+	color: red;
+	
+}
+
+
+.index-rightBody-header-out-ul{
+	
+	background-color: #FFF;
+	
+}
+
+ 
+
+.index-rightBody-header-out-ul-li-1{
+	
+	display:inherit;
+}
+.index-rightBody-header-out-ul-li-1{
+	
+	display:none;
+}
+
+.index-rightBody-header-out-ul-li-1{
+	
+	display:none;
+}
 
 
 /*-------------- end 首页右侧header部分----------------*/
@@ -268,18 +308,33 @@
 
 
 }
+ 
+/*------------ end 右侧内容头部的页面索引--------------*/
 
+
+
+
+/*---------------右侧网页实际展示内容部分------------------*/
 .index-rightBody-body-pages-all {
 
 	height: 100%;
 	width: 100%;
 	border: 1px #000000 solid;
-
+ overflow: hidden;
 
 }
 
+.index-rightBody-body-pages-ifarme {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	overflow: auto;
+ 
+}
 
-/*------------ end 右侧内容头部的页面索引--------------*/
+/*---------------------end 右侧网页实际展示内容部分----------------------------*/
+
+
 
 
 
@@ -305,6 +360,31 @@
 }
 
 .index-leftMenu-Menu::-webkit-scrollbar-corner {
+	background: #179a16;
+}
+
+
+
+.index-rightBody-body-pages-ifarme::-webkit-scrollbar {
+	width: 3px;
+
+}
+
+.index-rightBody-body-pages-ifarme::-webkit-scrollbar-track {
+	background: rgb(239, 239, 239);
+	border-radius: 0px;
+}
+
+.index-rightBody-body-pages-ifarme::-webkit-scrollbar-thumb {
+	background: #bfbfbf;
+	border-radius: 0px;
+}
+
+.index-rightBody-body-pages-ifarme::-webkit-scrollbar-thumb:hover {
+	background: #333;
+}
+
+.index-rightBody-body-pages-ifarme::-webkit-scrollbar-corner {
 	background: #179a16;
 }
 

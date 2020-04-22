@@ -248,28 +248,39 @@
 	
 }
 
+ 
+.index-rightBody-header-out-div{
+	
+	position: relative;
+	background-color: #FFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 8em;
+	margin-right:1.5em ;
+}
+
 
 .index-rightBody-header-out-ul{
 	
 	background-color: #FFF;
+	position: absolute;
+	top: 0.7em;
+	display: none;
+	padding: 0;
+	list-style: none;
+	width: 5.2em;
+	border-top: 1px #F5DEB3 solid;
+	width: 100%;
+}
+.index-rightBody-header-out-ul li{
+	border-right: 1px #F5DEB3 solid;
+	border-left: 1px #F5DEB3 solid;
+	border-bottom: 1px #F5DEB3 solid;
+	padding: 0.5em;
 	
 }
-
  
-
-.index-rightBody-header-out-ul-li-1{
-	
-	display:inherit;
-}
-.index-rightBody-header-out-ul-li-1{
-	
-	display:none;
-}
-
-.index-rightBody-header-out-ul-li-1{
-	
-	display:none;
-}
 
 
 /*-------------- end 首页右侧header部分----------------*/
@@ -278,7 +289,6 @@
 
 	width: 100%;
 	height: 100%;
-
 
 }
 
@@ -308,6 +318,12 @@
 
 
 }
+
+.index-rightBody-header-out-ul-li-4{
+	color: #FF0000;
+	
+}
+
  
 /*------------ end 右侧内容头部的页面索引--------------*/
 
@@ -389,6 +405,12 @@
 }
 
 /*-----------end 滚动条 --------------------*/
+
+
+
+
+
+
 
 /*--首页会交叉的图标上横线--*/
 .menu-i-1 {

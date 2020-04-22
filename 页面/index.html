@@ -31,7 +31,6 @@
 						</li>
 					</ul>
 
-
 				</div>
 
 			</section>
@@ -44,18 +43,15 @@
 					</span>
 					<div class="index-rightBody-header-out">
 						<img src="../lib/img/loginbackageimg.jpg">
-						<ul class="index-rightBody-header-out-ul">
-							<li class="index-rightBody-header-out-ul-li-1">系统管理员</li>
-							<li class="index-rightBody-header-out-ul-li-2">系统配置</li>
-							<li class="index-rightBody-header-out-ul-li-3">用户信息</li>
-						</ul>
-						<select class="index-rightBody-header-out-sel">
-							<option>系统管理员</option>
-							<option>系统配置</option>
-							<option>用户信息</option>
-							<option class="index-rightBody-header-out-outButton">退出登录</option>
-						</select>
-
+						<div class="index-rightBody-header-out-div">
+							<label v-on:click="showRightTitle">系统管理员</label>
+							<ul class="index-rightBody-header-out-ul">
+								<li class="index-rightBody-header-out-ul-li-1">系统管理员</li>
+								<li class="index-rightBody-header-out-ul-li-2">系统配置</li>
+								<li class="index-rightBody-header-out-ul-li-3">用户信息</li>
+								<li class="index-rightBody-header-out-ul-li-4" v-on:click="outLogin">注销登录</li>
+							</ul>
+						</div>
 					</div>
 				</header>
 				<div class="index-rightBody-body">
@@ -120,6 +116,18 @@
 		},
 		methods: {
 
+
+			//退出登录
+			outLogin: function() {
+				location = "login.html";
+			},
+
+			//右上角选项展开
+			showRightTitle: function() {
+				
+				$(".index-rightBody-header-out-ul").css("display", "block");
+
+			},
 			//添加打开的页面
 			AddopenPages: function(name, pageid, url) {
 				$(".index-rightBody-body-pages-all").hide();
@@ -205,6 +213,8 @@
 				$(".list-Arrow" + index).css("transform", "rotate(-90deg)");
 
 			},
+
+			//切换页面选项卡
 			Tabpages: function(tabid) {
 
 				$(".index-rightBody-body-pages-all").hide();

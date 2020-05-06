@@ -1,0 +1,89 @@
+.main-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+
+.main-table tr td {
+
+	border: 1px #000000 solid;
+	width: 50%;
+
+}
+
+
+.main-users {
+
+	color: #000;
+	padding: 1em;
+
+}
+
+.main-users div {
+
+	border-radius: 0.3em;
+	padding: 1em;
+	box-shadow: #6495ED 0 0 5px;
+}
+
+.main-users-title {
+	background-color: #20B2AA;
+	width: 100%;
+	display: inline-block;
+	padding: 0.3em 0;
+	 text-align: center;
+	 color: #FFF;
+}
+
+.main-users table {
+	border-collapse: collapse;
+	width: 100%;
+
+}
+
+.main-users table tr td {
+	padding: 0.3em;
+	width: 30%;
+	border: 1px #000 solid;
+}
+
+.main-optionRed{
+	
+	color: #000;
+	padding: 1em;
+	 
+}
+
+.main-optionRed div{
+	border-radius: 0.3em;
+	padding: 1em;
+	box-shadow: #6495ED 0 0 5px;
+
+}
+
+.main-optionRed table{
+		border-collapse: collapse;
+	width: 100%;
+}
+
+.main-optionRed table tr td {
+	padding: 0.3em;
+	width: 30%;
+	border: 1px #000 solid;
+}
+
+.main-optionRed-title {
+	background-color: #20B2AA;
+	width: 100%;
+	display: inline-block;
+	padding: 0.3em 0;
+	 text-align: center;
+	 color: #FFF;
+}
+
+
+.main-optionRed-echarts{
+	
+	height: 30em;
+	
+}

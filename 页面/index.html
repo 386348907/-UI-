@@ -66,9 +66,17 @@
 
 					<div class="index-rightBody-body-pages">
 
+						<div class="index-rightBody-body-pages-all"  >
+
+							<iframe src="main.html"   class="index-rightBody-body-pages-ifarme index-rightBody-body-pages-ifarme--1" frameborder="0" scrolling="off"
+							 id="external-frame"></iframe>
+						</div>
+
+
 						<div class="index-rightBody-body-pages-all" v-bind:class="'index-rightBody-body-pages-'+o.pageid" v-for="o in openPages">
 
-							<iframe v-bind:src="o.href" class="index-rightBody-body-pages-ifarme" frameborder="0" scrolling="off" id="external-frame"></iframe>
+							<iframe src="main.html" v-bind:src="o.href" class="index-rightBody-body-pages-ifarme" frameborder="0" scrolling="off"
+							 id="external-frame"></iframe>
 						</div>
 
 
@@ -101,14 +109,18 @@
 				id: "1",
 				level2Menu: [{
 						name: "用户管理",
-						href: "main.html",
+						href: "Users/users.html",
 						id: 1
 					},
 					{
 						name: "权限管理",
 						href: "login.html",
 						id: 2
-					},
+					},{
+						name: "图标管理",
+						href: "Icon/Allicon.html",
+						id: 3
+					}
 
 				],
 			}]
@@ -124,7 +136,7 @@
 
 			//右上角选项展开
 			showRightTitle: function() {
-				
+
 				$(".index-rightBody-header-out-ul").css("display", "block");
 
 			},
@@ -218,6 +230,7 @@
 			Tabpages: function(tabid) {
 
 				$(".index-rightBody-body-pages-all").hide();
+				 
 				$(".index-rightBody-body-pages-" + tabid).show();
 			}
 

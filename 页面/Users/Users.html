@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用户管理</title>
+		<link rel="stylesheet" type="text/css" href="../../lib/css/table.css" />
+		<link rel="stylesheet" type="text/css" href="../../lib/css/iconfont.css" />
+ 
+	</head>
+	<body>
+
+		<section class="Users-section" id="users">
+			<section class="table-control">
+
+				<section class="table">
+					<table class="table-header">
+						<thead>
+							<tr>
+								<th>
+									<input type="checkbox" id="AllCheck" hidden="hidden" />
+									<label for="AllCheck" class="lable-checkbox"></label>
+
+								</th>
+								<th>1</th>
+								<th>2</th>
+								<th>3</th>
+								<th>4</th>
+								<th>5</th>
+								<th>6</th>
+								<th>7</th>
+								<th>8</th>
+								<th>9</th>
+							</tr>
+						</thead>
+					</table>
+
+					<table class="table-body">
+						<thead>
+							<tr>
+								<th>
+									<input type="checkbox" id="AllCheck" hidden="hidden" />
+									<label for="AllCheck" class="lable-checkbox"></label>
+
+								</th>
+								<th>1</th>
+								<th>2</th>
+								<th>3</th>
+								<th>4</th>
+								<th>5</th>
+								<th>6</th>
+								<th>7</th>
+								<th>8</th>
+								<th>9</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="x in list">
+								<td>{{x.col1}}</td>
+								<td>{{x.col2}}</td>
+								<td>{{x.col3}}</td>
+								<td>{{x.col4}}</td>
+								<td>{{x.col5}}</td>
+								<td>{{x.col6}}</td>
+								<td>{{x.col7}}</td>
+								<td>{{x.col8}}</td>
+								<td>{{x.col9}}</td>
+								<td>{{x.col10}}</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</section>
+				<table class="table-footer">
+
+					<tr>
+						<td>每页：
+							<select>
+								<option>10</option>
+								<option>30</option>
+								<option>50</option>
+								<option>100</option>
+							</select>
+						</td>
+						<td class="table-footer-pagesetting">
+							<span class="iconfont icon-icon-test62 table-footer-pagesetting-btn"></span>
+							<span class="iconfont icon-icon-test59 table-footer-pagesetting-btn"></span>
+							<span><input type="number" value="1"></span>
+							<span class="iconfont icon-icon-test61 table-footer-pagesetting-btn"></span>
+							<span class="iconfont icon-icon-test65 table-footer-pagesetting-btn"></span>
+						</td>
+						<td>
+							总数量:{{list.length }}
+						</td>
+						<td class="table-footer-pageOptions">
+				 
+								<span class="iconfont icon-icon-test39 table-footer-pageOptions-btn"></span>
+								<span class="iconfont icon-icon-test18 table-footer-pageOptions-btn"></span>
+								<span class="iconfont icon-icon-test4 table-footer-pageOptions-btn"></span>
+						 
+						</td>
+					</tr>
+
+				</table>
+				
+				<section class="table-rigth-btn">
+					<div class="table-rigth-btn-search iconfont icon-icon-test12"></div>
+					<div class="table-rigth-btn-refresh iconfont icon-icon-test41"></div>
+				</section>
+				
+			</section>
+
+		</section>
+	</body>
+</html>
+
+<script src="../../lib/js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el: '#users	',
+		data: {
+			list: [{
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}, {
+				col1: "A",
+				col2: "B",
+				col3: "C",
+				col4: "D",
+				col5: "E",
+				col6: "F",
+				col7: "G",
+				col8: "H",
+				col9: "I",
+				col10: "J"
+			}]
+
+		}
+	});
+</script>
